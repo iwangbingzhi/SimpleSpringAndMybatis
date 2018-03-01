@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--sql隔离，对sql进行分类化管理
+使用Mapper代理方法开发，namespace有特殊的重要作用
+-->
+<mapper namespace="test">
+    <select id="findUserById" parameterType="int" resultType="cn.ssm.po.User">
+        SELECT * FROM USER WHERE id = #{id}
+    </select>
+
+</mapper>

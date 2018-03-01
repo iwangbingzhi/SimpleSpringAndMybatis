@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--    &lt;!&ndash;全局配置参数，需要时在设置&ndash;&gt;
+    <settings>
+        &lt;!&ndash;开启延迟加载&ndash;&gt;
+        <setting name="lazyLoadingEnabled" value="true"/>
+        &lt;!&ndash;设置为true的时候，将积极加载改成消极加载，即按需要加载&ndash;&gt;
+        <setting name="aggressiveLazyLoading" value="false"/>
+        &lt;!&ndash;开启二级缓存&ndash;&gt;
+        <setting name="cacheEnabled" value="true"/>
+    </settings>-->
+
+    <!--加载映射文件-->
+    <mappers>
+        <mapper resource="config/sqlmap/User.xml"/>
+        <!--通过resource一次加载一个文件-->
+        <!-- <mapper resource="com/wbz/config/User.xml"/>
+        <mapper resource="com/wbz/config/UserMapper.xml"/>-->
+
+<!--通过mapper接口加载映射文件，遵循一些规范，需要将mapper接口类名和mapper.xml映射文件名保持一致，并且是在一个目录中，而且是使用的mapper代理方法
+        <mapper class="com.wbz.mapper.UserMapper"/>-->
+
+<!--批量加载mapper 指定mapper接口的包名,mabatis自动扫描包下面的所有mapper接口（推荐使用）-->
+
+
+        <!--和spring整合后，使用mapper扫描器，这里不需要配置了-->
+        <!--<package name="cn.ssm.mapper"/>-->
+    </mappers>
+</configuration>
